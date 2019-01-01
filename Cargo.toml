@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["Bledhard <1akaant1@gmail.com>"]
 
 [dependencies]
+rand = "0.3.14"
 
 [[bin]]
 name = "hello_world"

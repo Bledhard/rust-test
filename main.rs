@@ -1,8 +1,5 @@
-mod formatting;
-use formatting::formatting;
+mod guess;
 
 fn main() {
-    println!("Hello, world!");
-
-    formatting();
+    guess::guess();
 }
