@@ -18,7 +18,8 @@
             ],
             "group": "build",
             "presentation": {
-                "reveal": "always"
+                "reveal": "always",
+                "panel": "shared"
             },
             "problemMatcher": [
                 {
@@ -133,12 +134,14 @@
             ]
         },
         {
-            "taskName": "bench",
+            "label": "bench",
             "args": [
                 "bench"
             ],
-            "showOutput": "always",
-            "isTestCommand": true,
+            "presentation": {
+                "reveal": "always"
+            },
+            "group": "test",
             "problemMatcher": [
                 {
                     "owner": "rust",
