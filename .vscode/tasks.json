@@ -18,6 +18,7 @@
             ],
             "group": "build",
             "presentation": {
+                "clear": true,
                 "reveal": "always",
                 "panel": "shared"
             },
@@ -135,6 +136,8 @@
         },
         {
             "label": "bench",
+            "type": "shell",
+            "command": "cargo",
             "args": [
                 "bench"
             ],

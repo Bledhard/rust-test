@@ -1,10 +1,10 @@
-mod fns;
+mod branches;
 
 use std::io;
 use std::io::prelude::*;
 
 fn main() {
-    fns::function_examples();
+    branches::branching_examples();
     pause();
 }
 
