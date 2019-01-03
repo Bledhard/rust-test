@@ -1,10 +1,12 @@
-mod branches;
+mod temperatures_converter;
+mod fibonacci;
 
 use std::io;
 use std::io::prelude::*;
 
 fn main() {
-    branches::branching_examples();
+    temperatures_converter::convert_temperature(10, "C");
+    fibonacci::fibonacci(5);
     pause();
 }
 
