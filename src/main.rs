@@ -1,10 +1,10 @@
-mod variables;
+mod fns;
 
 use std::io;
 use std::io::prelude::*;
 
 fn main() {
-    variables::variables();
+    fns::function_examples();
     pause();
 }
 
