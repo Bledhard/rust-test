@@ -1,12 +1,10 @@
-mod temperatures_converter;
-mod fibonacci;
+mod ownership;
 
 use std::io;
 use std::io::prelude::*;
 
 fn main() {
-    temperatures_converter::convert_temperature(10, "C");
-    fibonacci::fibonacci(5);
+    ownership::ownership_examples();
     pause();
 }
 
