@@ -1,10 +1,10 @@
-mod ownership;
+mod structs;
 
 use std::io;
 use std::io::prelude::*;
 
 fn main() {
-    ownership::ownership_examples();
+    structs::struct_examples();
     pause();
 }
 
