@@ -1,10 +1,10 @@
-mod structs;
+mod modules;
 
 use std::io;
 use std::io::prelude::*;
 
 fn main() {
-    structs::struct_examples();
+    modules::example();
     pause();
 }
 
