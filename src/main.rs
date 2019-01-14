@@ -1,10 +1,15 @@
-mod modules;
+mod collections;
 
 use std::io;
 use std::io::prelude::*;
 
 fn main() {
-    modules::example();
+    let mut numbers = [42, 1, 36, 34, 76, 378, 43, 1, 43, 54, 2, 3, 43];
+
+    println!("AVERAGE: {}", collections::mean(&numbers));
+    println!("MEDIAN: {}", collections::median(&mut numbers));
+    println!("MODE: {}", collections::mode(&numbers));
+
     pause();
 }
 
