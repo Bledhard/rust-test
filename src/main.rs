@@ -10,6 +10,8 @@ fn main() {
     println!("MEDIAN: {}", collections::median(&mut numbers));
     println!("MODE: {}", collections::mode(&numbers));
 
+    collections::pig_latin();
+
     pause();
 }
 
