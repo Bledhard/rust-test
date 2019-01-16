@@ -12,6 +12,9 @@ fn main() {
 
     collections::pig_latin();
 
+
+    collections::dir_example();
+
     pause();
 }
 

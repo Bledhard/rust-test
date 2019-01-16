@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 use std::io;
-use std::iter::FromIterator;
 
 pub fn mean(numbers: &[i32]) -> f32 {
     numbers.iter().sum::<i32>() as f32 / numbers.len() as f32
@@ -63,4 +62,10 @@ pub fn pig_latin() {
         new_s += &suffix;
     }
     println!("{}", new_s);
+}
+
+mod directory;
+
+pub fn dir_example() {
+    directory::dir();
 }
