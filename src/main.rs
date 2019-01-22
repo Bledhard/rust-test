@@ -1,4 +1,5 @@
 mod collections;
+mod generics;
 
 use std::io;
 use std::io::prelude::*;
