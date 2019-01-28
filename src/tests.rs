@@ -81,4 +81,11 @@ mod tests {
     fn greater_than_100() {
         Guess::new(200);
     }
+    
+
+    #[test]
+    #[ignore]
+    fn expensive_test() {
+        // code that takes an hour to run
+    }
 }
