@@ -1,0 +1,7 @@
+{
+    "files.exclude": {
+        "*.code-workspace": true,
+        "Cargo.lock": true,
+        "target": true
+    }
+}
