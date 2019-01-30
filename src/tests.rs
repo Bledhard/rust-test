@@ -1,5 +1,5 @@
 #[cfg(test)]
-mod tests {
+pub mod tests {
     #[test]
     fn exploration() {
         assert_eq!(2 + 2, 4);
@@ -87,5 +87,15 @@ mod tests {
     #[ignore]
     fn expensive_test() {
         // code that takes an hour to run
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn internal() {
+        assert_eq!(4, internal_adder(2, 2));
     }
 }

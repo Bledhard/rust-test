@@ -6,6 +6,10 @@ authors = ["Bledhard <1akaant1@gmail.com>"]
 [dependencies]
 rand = "0.3.14"
 
+[lib]
+name = "hello_world"
+path = "src/lib.rs"
+
 [[bin]]
 name = "hello_world"
 path = "src/main.rs"
