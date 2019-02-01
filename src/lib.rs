@@ -1,20 +1,10 @@
-mod collections;
-mod generics;
+mod minigrep;
 
 use std::io;
 use std::io::prelude::*;
 
 pub fn startup() {
-    let mut numbers = [42, 1, 36, 34, 76, 378, 43, 1, 43, 54, 2, 3, 43];
-
-    println!("AVERAGE: {}", collections::mean(&numbers));
-    println!("MEDIAN: {}", collections::median(&mut numbers));
-    println!("MODE: {}", collections::mode(&numbers));
-
-    collections::pig_latin();
-
-
-    collections::dir_example();
+    minigrep::start();
 
     pause();
 }
