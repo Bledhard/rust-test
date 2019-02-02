@@ -4,7 +4,6 @@ mod config;
 use self::config::Config;
 use std::env;
 use std::process;
-use std::error::Error;
 
 pub fn startup() {
     let args: Vec<String> = env::args().collect();
@@ -15,19 +14,10 @@ pub fn startup() {
     });
 
     println!("Searching for {}", config.query);
-    println!("In file {}", config.filename); 
 
-    if let Err(e) = run(config) {
+    if let Err(e) = file::read(&config.filename) {
         println!("Application error: {}", e);
 
         process::exit(1);
     }
-}
-
-fn run(config: Config) -> Result<(), Box<Error>> {
-    let contents = file::read(&config.filename);
-
-    println!("With text:\n{}", contents);
-
-    Ok(())
 }
