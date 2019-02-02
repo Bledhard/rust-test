@@ -1,3 +1,5 @@
+mod file_read;
+
 use std::env;
 
 pub fn start() {
@@ -7,5 +9,7 @@ pub fn start() {
     let filename = &args[2];
 
     println!("Searching for {}", query);
-    println!("In file {}", filename);
+    let contents = file_read::read(&filename);
+
+    println!("With text:\n{}", contents);
 }
