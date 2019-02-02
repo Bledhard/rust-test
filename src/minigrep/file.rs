@@ -1,9 +1,7 @@
 use std::fs::File;
 use std::io::prelude::Read;
 
-pub fn read(filename: &str) -> String {
-    println!("In file {}", filename);    
-
+pub fn read(filename: &str) -> String {  
     let mut f = File::open(filename).expect("file not found");
 
     let mut contents = String::new();

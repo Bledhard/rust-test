@@ -4,7 +4,7 @@ use std::io;
 use std::io::prelude::*;
 
 pub fn startup() {
-    minigrep::start();
+    minigrep::startup();
 
     pause();
 }
