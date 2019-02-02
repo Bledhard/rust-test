@@ -1,15 +1,16 @@
-mod file_read;
+mod file;
+mod config;
 
+use self::config::Config;
 use std::env;
 
 pub fn start() {
     let args: Vec<String> = env::args().collect();
-    
-    let query = &args[1];
-    let filename = &args[2];
 
-    println!("Searching for {}", query);
-    let contents = file_read::read(&filename);
+    let config = Config::new(&args);
+
+    println!("Searching for {}", config.query);
+    let contents = file::read(&config.filename);
 
     println!("With text:\n{}", contents);
 }
