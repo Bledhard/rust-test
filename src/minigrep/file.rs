@@ -1,16 +1,17 @@
 use std::fs::File;
 use std::io::prelude::Read;
 use std::error::Error;
+use super::{config::Config, search};
 
-pub fn read(filename: &str) -> Result<(), Box<Error>> {  
-    println!("In file {}", filename); 
-
-    let mut f = File::open(filename)?;
+pub fn read(config: &Config) -> Result<(), Box<Error>> {
+    let mut f = File::open(&config.filename)?;
 
     let mut contents = String::new();
     f.read_to_string(&mut contents)?;
 
-    println!("With text:\n{}", contents);
+    for line in search(&config.query, &contents) {
+        println!("{}", line);
+    }
 
     Ok(())
 }
