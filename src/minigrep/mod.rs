@@ -1,5 +1,6 @@
 mod file;
 mod config;
+mod search;
 
 use self::config::Config;
 use std::env;
@@ -17,36 +18,5 @@ pub fn startup() {
         println!("Application error: {}", e);
 
         process::exit(1);
-    }
-}
-
-pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
-    let mut results = Vec::new();
-
-    for line in contents.lines() {
-        if line.contains(query) {
-            results.push(line);
-        }
-    }
-
-    results
-}
-
-#[cfg(test)]
-mod test {
-    use super::*;
-
-    #[test]
-    fn one_result() {
-        let query = "duct";
-        let contents = "\
-        Rust:
-        safe, fast, productive.
-        Pick three.";
-
-        assert_eq!(
-            vec!["        safe, fast, productive."],
-            search(query, contents)
-        );
     }
 }
