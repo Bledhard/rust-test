@@ -1,4 +1,15 @@
-mod minigrep;
+pub mod basics;
+pub mod branches;
+pub mod collections;
+pub mod documentation;
+pub mod enums;
+pub mod error_handling;
+pub mod functional_features;
+pub mod generics;
+pub mod minigrep;
+pub mod modules;
+pub mod ownership;
+pub mod structs;
 
 use std::io;
 use std::io::prelude::*;

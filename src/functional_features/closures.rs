@@ -1,12 +1,14 @@
 use std::thread;
 use std::time::Duration;
 
+#[allow(dead_code)]
 pub fn simulated_expensive_calculation(intensity: u32) -> u32 {
     println!("calculating slowly...");
     thread::sleep(Duration::from_secs(2));
     intensity
 }
 
+#[allow(dead_code)]
 pub fn init() {
     let simulated_user_specified_value = 10;
     let simulated_random_number = 7;
@@ -17,6 +19,7 @@ pub fn init() {
     );
 }
 
+#[allow(dead_code)]
 fn generate_workout(intensity: u32, random_number: u32) {
     let mut expensive_result = Cacher::new(|num| {
         println!("calculating slowly...");
@@ -45,6 +48,7 @@ fn generate_workout(intensity: u32, random_number: u32) {
     }
 }
 
+#[allow(dead_code)]
 struct Cacher<T>
     where T: Fn(u32) -> u32
 {
@@ -55,6 +59,7 @@ struct Cacher<T>
 impl<T> Cacher<T>
     where T: Fn(u32) -> u32
 {
+    #[allow(dead_code)]
     fn new(calculation: T) -> Cacher<T> {
         Cacher {
             calculation,
@@ -62,6 +67,7 @@ impl<T> Cacher<T>
         }
     }
 
+    #[allow(dead_code)]
     fn value(&mut self, arg: u32) -> u32 {
         match self.value {
             Some(v) => v,

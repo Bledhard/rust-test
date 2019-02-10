@@ -4,12 +4,12 @@ use std::io;
 pub fn example() {
     let mut numbers = [42, 1, 36, 34, 76, 378, 43, 1, 43, 54, 2, 3, 43];
 
-    println!("AVERAGE: {}", collections::mean(&numbers));
-    println!("MEDIAN: {}", collections::median(&mut numbers));
-    println!("MODE: {}", collections::mode(&numbers));
+    println!("AVERAGE: {}", mean(&numbers));
+    println!("MEDIAN: {}", median(&mut numbers));
+    println!("MODE: {}", mode(&numbers));
 
-    collections::pig_latin();
-    collections::dir_example();
+    pig_latin();
+    dir_example();
 }
 
 pub fn mean(numbers: &[i32]) -> f32 {

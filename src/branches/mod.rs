@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn branching_examples() {
     example1();
     example2();
@@ -23,7 +24,8 @@ fn example1() {
 // Complete copy of example1(), but written in C# style
 // Provides the same result
 #[allow(unused_parens)] // to disable 'remove these paretheses' warning
-fn example2() {
+fn example2() 
+{
     println!("\nExample #2:");
     let number = 5;
 

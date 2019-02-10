@@ -12,11 +12,13 @@ impl Rectangle {
 }
 
 impl Rectangle {
+    #[allow(dead_code)]
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
     }
 }
 
+#[allow(dead_code)]
 pub fn example() {
     let rect1 = Rectangle { width: 30, height: 50 };
     let rect2 = Rectangle { width: 10, height: 40 };

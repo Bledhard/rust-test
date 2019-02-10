@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub enum Coin {
     Penny,
     Nickel,
@@ -5,6 +6,7 @@ pub enum Coin {
     Quarter,
 }
 
+#[allow(dead_code)]
 pub fn value_in_cents(coin: Coin) -> u32 {
     match coin {
         Coin::Penny => {

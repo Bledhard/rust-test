@@ -3,6 +3,7 @@ mod method_2;
 mod associated_fn;
 mod multi_impl;
 
+#[allow(dead_code)]
 pub fn example() {
     println!("\nDefining Methods:");
     method_1::example();

@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 #[derive(Debug)] // so we can inspect the state in a minute
 pub enum UsState {
     Alabama,
@@ -5,6 +6,7 @@ pub enum UsState {
     // --snip--
 }
 
+#[allow(dead_code)]
 pub enum Coin {
     Penny,
     Nickel,
@@ -12,6 +14,7 @@ pub enum Coin {
     Quarter(UsState),
 }
 
+#[allow(dead_code)]
 pub fn value_in_cents(coin: Coin) -> u32 {
     match coin {
         Coin::Penny => 1,

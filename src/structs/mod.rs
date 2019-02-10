@@ -2,6 +2,7 @@ mod struct_basics;
 mod struct_example;
 mod method_syntax;
 
+#[allow(dead_code)]
 pub fn struct_examples() {
     println!("\nDefining and Instantiating Structs:");
     struct_basics::examples();

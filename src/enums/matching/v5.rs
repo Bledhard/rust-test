@@ -1,3 +1,4 @@
+#[allow(dead_code)]
 pub fn example() {
     let some_u8_value = 0u8;
     match some_u8_value {
