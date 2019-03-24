@@ -58,6 +58,23 @@ mod tests {
             self.sent_messages.borrow_mut().push(String::from(message));
         }
     }
+    
+    /*impl Messenger for MockMessenger {
+        fn send(&self, message: &str) {
+            let mut one_borrow = self.sent_messages.borrow_mut();
+            let mut two_borrow = self.sent_messages.borrow_mut();
+
+            one_borrow.push(String::from(message));
+            two_borrow.push(String::from(message));
+        }
+    }
+
+    Result:
+    ---- tests::it_sends_an_over_75_percent_warning_message stdout ----
+        thread 'tests::it_sends_an_over_75_percent_warning_message' panicked at
+    'already borrowed: BorrowMutError', src/libcore/result.rs:906:4
+    note: Run with `RUST_BACKTRACE=1` for a backtrace.
+    */
 
     #[test]
     fn it_sends_an_over_75_percent_warning_message() {
@@ -65,4 +82,29 @@ mod tests {
 
         assert_eq!(mock_messenger.sent_messages.borrow().len(), 1);
     }
+}
+
+#[derive(Debug)]
+enum List {
+    Cons(Rc<RefCell<i32>>, Rc<List>),
+    Nil,
+}
+
+use List::{Cons, Nil};
+use std::rc::Rc;
+use std::cell::RefCell;
+
+fn example2() {
+    let value = Rc::new(RefCell::new(5));
+
+    let a = Rc::new(Cons(Rc::clone(&value), Rc::new(Nil)));
+
+    let b = Cons(Rc::new(RefCell::new(6)), Rc::clone(&a));
+    let c = Cons(Rc::new(RefCell::new(10)), Rc::clone(&a));
+
+    *value.borrow_mut() += 10;
+
+    println!("a after = {:?}", a);
+    println!("b after = {:?}", b);
+    println!("c after = {:?}", c);
 }
