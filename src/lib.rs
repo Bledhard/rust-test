@@ -10,12 +10,14 @@ pub mod minigrep;
 pub mod modules;
 pub mod ownership;
 pub mod structs;
+pub mod pointers;
 
 use std::io;
 use std::io::prelude::*;
 
 pub fn startup() {
-    minigrep::startup();
+    //minigrep::startup();
+    pointers::main();
 
     pause();
 }

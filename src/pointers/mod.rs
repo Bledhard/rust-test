@@ -1,3 +1,6 @@
+pub mod rcmemoryleak;
+
+#[allow(dead_code)]
 fn example1() {
     let b = Box::new(5);
     println!("b = {}", b);
@@ -8,9 +11,15 @@ enum List {
     Nil,
 }
 
-use List::{Cons, Nil};
+use self::List::{Cons, Nil};
 
-fn main() {
+pub fn main() {
+    rcmemoryleak::main();
+}
+
+#[allow(dead_code)]
+#[allow(unused_variables)]
+fn test_list() {
     let list = Cons(1,
         Box::new(Cons(2,
             Box::new(Cons(3,
